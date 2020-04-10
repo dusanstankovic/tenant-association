@@ -20,6 +20,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @MappedSuperclass
 // this is base entity
+// fix for code review
 public class BaseEntity implements Serializable {
 
     @Id
