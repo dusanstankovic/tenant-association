@@ -19,6 +19,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
+// this is base entity
 public class BaseEntity implements Serializable {
 
     @Id
