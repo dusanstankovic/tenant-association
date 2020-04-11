@@ -1,9 +1,6 @@
 package dev.themighty.tenantassociation.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -17,6 +14,7 @@ import java.util.Set;
 @Table(name = "tenants")
 public class Tenant extends NamedEntity {
 
+    @Builder
     public Tenant(Long id, LocalDateTime createDateTime, LocalDateTime updateDateTime, String firstName,
                   String lastName, String telephone, String email, Unit unit) {
         super(id, createDateTime, updateDateTime, firstName, lastName);
