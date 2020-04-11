@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Units</title>
+</head>
+<body>
+<h1 th:text="'List of units'">Units List:</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Datetime created</th>
+        <th>Datetime updated</th>
+        <th>Unit name</th>
+        <th>Unit description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="unit : ${units}">
+        <td th:text="${unit.id}">1</td>
+        <td th:text="${unit.createDateTime}">1</td>
+        <td th:text="${unit.updateDateTime}">1</td>
+        <td th:text="${unit.unitName}">1</td>
+        <td th:text="${unit.description}">1</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

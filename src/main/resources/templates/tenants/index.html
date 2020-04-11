@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Tenants</title>
+</head>
+<body>
+<h1 th:text="'List of tenants'">Tenants List:</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Datetime created</th>
+        <th>Datetime updated</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Telephone</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tenant : ${tenants}">
+        <td th:text="${tenant.id}">1</td>
+        <td th:text="${tenant.createDateTime}">1</td>
+        <td th:text="${tenant.updateDateTime}">1</td>
+        <td th:text="${tenant.firstName}">1</td>
+        <td th:text="${tenant.lastName}">1</td>
+        <td th:text="${tenant.telephone}">1</td>
+        <td th:text="${tenant.email}">1</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
