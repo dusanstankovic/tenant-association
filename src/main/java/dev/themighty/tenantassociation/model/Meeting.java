@@ -1,9 +1,6 @@
 package dev.themighty.tenantassociation.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -17,6 +14,16 @@ import java.util.Set;
 @Entity
 @Table(name = "meetings")
 public class Meeting extends BaseEntity {
+
+    @Builder
+    public Meeting(Long id, LocalDateTime createDateTime, LocalDateTime updateDateTime, LocalDateTime meetingDateTime,
+                   String shortDescription, String agenda, Set<Tenant> attendees) {
+        super(id, createDateTime, updateDateTime);
+        this.meetingDateTime = meetingDateTime;
+        this.shortDescription = shortDescription;
+        this.agenda = agenda;
+        this.attendees = attendees;
+    }
 
     @Column(name = "meeting_dt")
     private LocalDateTime meetingDateTime;
