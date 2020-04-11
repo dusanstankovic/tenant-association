@@ -1,11 +1,13 @@
 package dev.themighty.tenantassociation.services.map;
 
 import dev.themighty.tenantassociation.model.Unit;
-import dev.themighty.tenantassociation.services.CrudService;
+import dev.themighty.tenantassociation.services.UnitService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class UnitMapService extends AbstractMapService<Unit, Long> implements CrudService<Unit, Long> {
+@Service
+public class UnitMapService extends AbstractMapService<Unit, Long> implements UnitService {
 
     @Override
     public Set<Unit> findAll() {
