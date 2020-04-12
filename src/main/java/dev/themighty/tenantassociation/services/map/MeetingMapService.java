@@ -21,7 +21,7 @@ public class MeetingMapService extends AbstractMapService<Meeting, Long> impleme
 
     @Override
     public Meeting save(Meeting meeting) {
-        return super.save(meeting.getId(), meeting);
+        return super.save(meeting);
     }
 
     @Override

@@ -21,7 +21,7 @@ public class UnitMapService extends AbstractMapService<Unit, Long> implements Un
 
     @Override
     public Unit save(Unit unit) {
-        return super.save(unit.getId(), unit);
+        return super.save(unit);
     }
 
     @Override
