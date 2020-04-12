@@ -21,7 +21,7 @@ public class TenantMapService extends AbstractMapService<Tenant, Long> implement
 
     @Override
     public Tenant save(Tenant tenant) {
-        return super.save(tenant.getId(), tenant);
+        return super.save(tenant);
     }
 
     @Override

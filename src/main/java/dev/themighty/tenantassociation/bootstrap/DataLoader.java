@@ -37,7 +37,6 @@ public class DataLoader implements CommandLineRunner {
     private void loadData() {
 
         Unit unit1 = new Unit();
-        unit1.setId(1L);
         unit1.setCreateDateTime(LocalDateTime.now());
         unit1.setUpdateDateTime(LocalDateTime.now());
         unit1.setUnitName("18");
@@ -47,7 +46,6 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("Loaded unit 1 ...");
 
         Tenant tenant1 = new Tenant();
-        tenant1.setId(1L);
         tenant1.setCreateDateTime(LocalDateTime.now());
         tenant1.setUpdateDateTime(LocalDateTime.now());
         tenant1.setUnit(unit1);
@@ -58,7 +56,6 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("Loaded tenant 1 ...");
 
         Unit unit2 = new Unit();
-        unit2.setId(2L);
         unit2.setCreateDateTime(LocalDateTime.now());
         unit2.setUpdateDateTime(LocalDateTime.now());
         unit2.setUnitName("23");
@@ -68,7 +65,6 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("Loaded unit 2 ...");
 
         Tenant tenant2 = new Tenant();
-        tenant2.setId(2L);
         tenant2.setCreateDateTime(LocalDateTime.now());
         tenant2.setUpdateDateTime(LocalDateTime.now());
         tenant2.setUnit(unit2);
@@ -83,7 +79,6 @@ public class DataLoader implements CommandLineRunner {
         attendeesMeeting1.add(tenant2);
 
         Meeting meeting1 = new Meeting();
-        meeting1.setId(1L);
         meeting1.setCreateDateTime(LocalDateTime.now());
         meeting1.setUpdateDateTime(LocalDateTime.now());
         meeting1.setMeetingDateTime(LocalDateTime.now());
@@ -99,7 +94,6 @@ public class DataLoader implements CommandLineRunner {
         attendeesMeeting2.add(tenant2);
 
         Meeting meeting2 = new Meeting();
-        meeting2.setId(2L);
         meeting2.setCreateDateTime(LocalDateTime.now());
         meeting2.setUpdateDateTime(LocalDateTime.now());
         meeting2.setMeetingDateTime(LocalDateTime.now());
