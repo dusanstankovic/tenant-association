@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class UnitMapServiceTest {
 
     UnitMapService unitMapService;
+    
     final Set<Tenant> tenants = new HashSet<>();
     final Long unitId = 1L;
     final LocalDateTime createDateTime = LocalDateTime.now();
@@ -24,7 +25,7 @@ class UnitMapServiceTest {
 
     @BeforeEach
     void setUp() {
-        unitMapService = new UnitMapService();
+        unitMapService = new UnitMapService(tenantService, meetingService);
 
         tenants.add(Tenant.builder().build());
         tenants.add(Tenant.builder().build());

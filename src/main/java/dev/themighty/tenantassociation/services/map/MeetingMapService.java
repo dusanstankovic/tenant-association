@@ -2,12 +2,24 @@ package dev.themighty.tenantassociation.services.map;
 
 import dev.themighty.tenantassociation.model.Meeting;
 import dev.themighty.tenantassociation.services.MeetingService;
+import dev.themighty.tenantassociation.services.TenantService;
+import dev.themighty.tenantassociation.services.UnitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class MeetingMapService extends AbstractMapService<Meeting, Long> implements MeetingService {
+
+    private final TenantService tenantService;
+    private final UnitService unitService;
+
+    public MeetingMapService(TenantService tenantService, UnitService unitService) {
+        this.tenantService = tenantService;
+        this.unitService = unitService;
+    }
 
     @Override
     public Set<Meeting> findAll() {
