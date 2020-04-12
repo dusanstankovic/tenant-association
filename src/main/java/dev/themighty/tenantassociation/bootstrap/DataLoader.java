@@ -43,17 +43,17 @@ public class DataLoader implements CommandLineRunner {
         unit1.setDescription("Stankovic");
 
         unitService.save(unit1);
-        System.out.println("Loaded unit 1 ...");
 
         Tenant tenant1 = new Tenant();
         tenant1.setCreateDateTime(LocalDateTime.now());
         tenant1.setUpdateDateTime(LocalDateTime.now());
+        tenant1.setFirstName("John");
+        tenant1.setLastName("Robertson");
         tenant1.setUnit(unit1);
         tenant1.setTelephone("064-252-8578");
         tenant1.setEmail("tenant1@gmail.com");
 
         tenantService.save(tenant1);
-        System.out.println("Loaded tenant 1 ...");
 
         Unit unit2 = new Unit();
         unit2.setCreateDateTime(LocalDateTime.now());
@@ -62,17 +62,17 @@ public class DataLoader implements CommandLineRunner {
         unit2.setDescription("Krsanin");
 
         unitService.save(unit2);
-        System.out.println("Loaded unit 2 ...");
 
         Tenant tenant2 = new Tenant();
         tenant2.setCreateDateTime(LocalDateTime.now());
         tenant2.setUpdateDateTime(LocalDateTime.now());
+        tenant2.setFirstName("Millie");
+        tenant2.setLastName("Vanillie");
         tenant2.setUnit(unit2);
         tenant2.setTelephone("063-180-5555");
         tenant2.setEmail("tenant2@gmail.com");
 
         tenantService.save(tenant2);
-        System.out.println("Loaded tenant 2 ...");
 
         Set<Tenant> attendeesMeeting1 = new HashSet<>();
         attendeesMeeting1.add(tenant1);
@@ -87,7 +87,6 @@ public class DataLoader implements CommandLineRunner {
         meeting1.setAttendees(attendeesMeeting1);
 
         meetingService.save(meeting1);
-        System.out.println("Loaded meeting 1 ...");
 
         Set<Tenant> attendeesMeeting2 = new HashSet<>();
         attendeesMeeting2.add(tenant1);
@@ -102,7 +101,6 @@ public class DataLoader implements CommandLineRunner {
         meeting2.setAttendees(attendeesMeeting2);
 
         meetingService.save(meeting2);
-        System.out.println("Loaded meeting 2 ...");
 
         Set<Meeting> meetings = new HashSet<>();
         meetings.add(meeting1);
