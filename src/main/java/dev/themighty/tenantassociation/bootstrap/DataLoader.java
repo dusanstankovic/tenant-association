@@ -36,41 +36,45 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadData() {
 
-        Unit unit1 = new Unit();
-        unit1.setCreateDateTime(LocalDateTime.now());
-        unit1.setUpdateDateTime(LocalDateTime.now());
-        unit1.setUnitName("18");
-        unit1.setDescription("Stankovic");
+        Unit unit1 = Unit.builder()
+                .createDateTime(LocalDateTime.now())
+                .updateDateTime(LocalDateTime.now())
+                .unitName("18")
+                .description("Robertson")
+                .build();
 
         unitService.save(unit1);
 
-        Tenant tenant1 = new Tenant();
-        tenant1.setCreateDateTime(LocalDateTime.now());
-        tenant1.setUpdateDateTime(LocalDateTime.now());
-        tenant1.setFirstName("John");
-        tenant1.setLastName("Robertson");
-        tenant1.setUnit(unit1);
-        tenant1.setTelephone("064-252-8578");
-        tenant1.setEmail("tenant1@gmail.com");
+        Tenant tenant1 = Tenant.builder()
+                .createDateTime(LocalDateTime.now())
+                .updateDateTime(LocalDateTime.now())
+                .firstName("John")
+                .lastName("Robertson")
+                .unit(unit1)
+                .telephone("064-252-8578")
+                .email("tenant1@gmail.com")
+                .build();
 
         tenantService.save(tenant1);
 
-        Unit unit2 = new Unit();
-        unit2.setCreateDateTime(LocalDateTime.now());
-        unit2.setUpdateDateTime(LocalDateTime.now());
-        unit2.setUnitName("23");
-        unit2.setDescription("Krsanin");
+        Unit unit2 = Unit.builder()
+                .createDateTime(LocalDateTime.now())
+                .updateDateTime(LocalDateTime.now())
+                .unitName("23")
+                .description("Nicholson")
+                .build();
 
         unitService.save(unit2);
 
-        Tenant tenant2 = new Tenant();
-        tenant2.setCreateDateTime(LocalDateTime.now());
-        tenant2.setUpdateDateTime(LocalDateTime.now());
-        tenant2.setFirstName("Millie");
-        tenant2.setLastName("Vanillie");
-        tenant2.setUnit(unit2);
-        tenant2.setTelephone("063-180-5555");
-        tenant2.setEmail("tenant2@gmail.com");
+        Tenant tenant2 = Tenant.builder()
+                .createDateTime(LocalDateTime.now())
+                .updateDateTime(LocalDateTime.now())
+                .firstName("Robbie")
+                .lastName("Nicholson")
+                .unit(unit2)
+                .telephone("063-180-5555")
+                .email("tenant2@gmail.com")
+                .build();
 
         tenantService.save(tenant2);
 
@@ -78,13 +82,14 @@ public class DataLoader implements CommandLineRunner {
         attendeesMeeting1.add(tenant1);
         attendeesMeeting1.add(tenant2);
 
-        Meeting meeting1 = new Meeting();
-        meeting1.setCreateDateTime(LocalDateTime.now());
-        meeting1.setUpdateDateTime(LocalDateTime.now());
-        meeting1.setMeetingDateTime(LocalDateTime.now());
-        meeting1.setShortDescription("Monthly meeting for January");
-        meeting1.setAgenda("Repairs on the roof.");
-        meeting1.setAttendees(attendeesMeeting1);
+        Meeting meeting1 = Meeting.builder()
+                .createDateTime(LocalDateTime.now())
+                .updateDateTime(LocalDateTime.now())
+                .meetingDateTime(LocalDateTime.now())
+                .shortDescription("Monthly meeting for January")
+                .agenda("Repairs on the roof.")
+                .attendees(attendeesMeeting1)
+                .build();
 
         meetingService.save(meeting1);
 
@@ -92,13 +97,14 @@ public class DataLoader implements CommandLineRunner {
         attendeesMeeting2.add(tenant1);
         attendeesMeeting2.add(tenant2);
 
-        Meeting meeting2 = new Meeting();
-        meeting2.setCreateDateTime(LocalDateTime.now());
-        meeting2.setUpdateDateTime(LocalDateTime.now());
-        meeting2.setMeetingDateTime(LocalDateTime.now());
-        meeting2.setShortDescription("Monthly meeting for February");
-        meeting2.setAgenda("Bid for door replacement. Collecting money for March fund.");
-        meeting2.setAttendees(attendeesMeeting2);
+        Meeting meeting2 = Meeting.builder()
+                .createDateTime(LocalDateTime.now())
+                .updateDateTime(LocalDateTime.now())
+                .meetingDateTime(LocalDateTime.now())
+                .shortDescription("Monthly meeting for February")
+                .agenda("Bid for door replacement. Collecting money for March fund.")
+                .attendees(attendeesMeeting2)
+                .build();
 
         meetingService.save(meeting2);
 
