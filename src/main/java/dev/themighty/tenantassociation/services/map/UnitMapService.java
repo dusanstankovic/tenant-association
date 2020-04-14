@@ -1,8 +1,6 @@
 package dev.themighty.tenantassociation.services.map;
 
 import dev.themighty.tenantassociation.model.Unit;
-import dev.themighty.tenantassociation.services.MeetingService;
-import dev.themighty.tenantassociation.services.TenantService;
 import dev.themighty.tenantassociation.services.UnitService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -12,14 +10,6 @@ import java.util.Set;
 @Service
 @Profile({"default", "map"})
 public class UnitMapService extends AbstractMapService<Unit, Long> implements UnitService {
-
-    private final TenantService tenantService;
-    private final MeetingService meetingService;
-
-    public UnitMapService(TenantService tenantService, MeetingService meetingService) {
-        this.tenantService = tenantService;
-        this.meetingService = meetingService;
-    }
 
     @Override
     public Set<Unit> findAll() {

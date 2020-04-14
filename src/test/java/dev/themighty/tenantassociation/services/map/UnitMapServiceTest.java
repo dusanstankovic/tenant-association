@@ -25,7 +25,7 @@ class UnitMapServiceTest {
 
     @BeforeEach
     void setUp() {
-        unitMapService = new UnitMapService(tenantService, meetingService);
+        unitMapService = new UnitMapService();
 
         tenants.add(Tenant.builder().build());
         tenants.add(Tenant.builder().build());

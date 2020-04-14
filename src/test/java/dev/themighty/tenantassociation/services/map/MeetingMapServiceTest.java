@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class MeetingMapServiceTest {
 
     MeetingMapService meetingMapService;
+
     final Long meetingId = 1L;
     final LocalDateTime createDateTime = LocalDateTime.now();
     final LocalDateTime updateDateTime = LocalDateTime.now();
